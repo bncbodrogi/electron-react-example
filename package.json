@@ -1,0 +1,45 @@
+{
+  "name": "electron-react-example",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron.js",
+  "dependencies": {
+    "electron-is-dev": "^1.0.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "yarn react-build && yarn electron-build",
+    "electron-pack": "electron-builder -c.extraMetadata.main = build / electron.js",
+    "react-build": "react-scripts build",
+    "electron-build": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "homepage": "./",
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "electron": "^3.0.4",
+    "electron-builder": "^20.28.4",
+    "wait-on": "^3.1.0"
+  },
+  "build": {
+    "appId": "com.example.electron-cra",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
